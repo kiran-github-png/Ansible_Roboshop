@@ -18,7 +18,7 @@
       state: started
       enabled: yes
 
-  - name: create and provide permissionas to username
+  - name: create and provide permissionas to user
     community.rabbitmq.rabbitmq_user:
       user: roboshop 
       password: roboshop123
