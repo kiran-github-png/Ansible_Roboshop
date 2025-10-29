@@ -8,8 +8,8 @@
     domain_name: "daws86s.blog"
     
     instances: 
-    # - mongodb
-    # - redis
+    - mongodb
+    - redis
     - mysql
     - rabbitmq
     
