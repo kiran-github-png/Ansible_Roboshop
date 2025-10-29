@@ -8,8 +8,10 @@
     domain_name: "daws86s.blog"
     
     instances: 
-    - mongodb
-    - redis
+    # - mongodb
+    # - redis
+    - mysql
+    - rabbitmq
     
   tasks:
   - name: create ec2 instance
