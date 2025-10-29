@@ -2,7 +2,7 @@
   hosts: catalogue
   become: yes
   tasks:
-  - name: disable default node json
+  - name: disable default nodejs
     ansible.builtin.command: dnf module disable nodejs -y
 
   - name: enable nodejs
@@ -35,3 +35,4 @@
     ansible.builtin.unarchive:
       src: /tmp/catalogue.zip
       dest: /app
+      remote_src: yes
