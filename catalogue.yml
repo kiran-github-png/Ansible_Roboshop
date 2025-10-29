@@ -45,7 +45,7 @@
     ansible.builtin.copy:
      src: catalogue.service
      dest: /etc/systemd/system/catalogue.service
-     remote_src: true
+    
 
   - name: copty mongo repo
     ansible.builtin.copy:
