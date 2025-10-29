@@ -37,7 +37,7 @@
       dest: /app
       remote_src: yes
 
-  - name: install dependences
+  - name: install dependencies
     community.general.npm:
     path: /app
 
