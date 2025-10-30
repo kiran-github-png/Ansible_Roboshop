@@ -60,16 +60,15 @@
       src: shipping.service
       dest: /etc/systemd/system/shipping.service
 
-  - name: import shipping data into mysql
+   -name: import shipping data into mysql
     community.mysql.mysql_db:
       state: import
-      name: allow
-      login_host: mysql.daws86s.blog
+      name: all
+      login_host: mysql.daws86s.fun
       login_user: root
-      login_password: Roboshop@1
+      login_password: RoboShop@1
       target: "{{ item }}"
-
-    loop:
+   loop:
     - /app/db/schema.sql
-    - /app/db/app-user.sql
+    - /app/db/app-user.sql 
     - /app/db/master-data.sql
