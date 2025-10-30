@@ -13,46 +13,11 @@
       name: nodejs
       state: present
 
-  - name: Create RoboShop System user
+  - name: create roboshop system user
     ansible.builtin.user:
-      name: roboshop
-      comment: roboshop system user
-      system: true
-      shell: /sbin/nologin
-      home: /app
-
-  - name: create app directory
-    ansible.builtin.file:
-      state: directory
-      path: /app
-
-  - name: download catalogue Application
-    ansible.builtin.get_url:
-      url: https://roboshop-artifacts.s3.amazonaws.com/catalogue-v3.zip 
-      dest: /tmp/catalogue.zip
-
-  - name: extract catalogue Application
-    ansible.builtin.unarchive:
-      src: /tmp/catalogue.zip
-      dest: /app
-      remote_src: yes
-
-  - name: install dependencies
-    community.general.npm:
-     path: /app
-
-  - name: copy catalogue service
-    ansible.builtin.copy:
-     src: catalogue.service
-     dest: /etc/systemd/system/catalogue.service
-    
-
-  - name: copty mongo repo
-    ansible.builtin.copy:
-      src: mongo.repo
-      dest: /etc/yum.repos.d/mongo.repo
-
-  - name: install mongodb client
-    ansible.builtin.package:
-      name: mongodb-mongosh
-      state: present
+       name: roboshop
+       comment: roboshop system user
+       system: true
+       shell: /sbin/nologin
+       home: /app
+       
